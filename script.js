@@ -62,7 +62,7 @@ function speak(text, callback) {
   text_speak.rate = 1.1;
   text_speak.pitch = 1;
   text_speak.volume = 1;
-  text_speak.lang = "hi-GB";
+  text_speak.lang = "hi-IN";
 
   text_speak.onend = function (event) {
     console.log("Speech has finished.");

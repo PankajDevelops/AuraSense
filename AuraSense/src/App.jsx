@@ -37,44 +37,41 @@ function App() {
   };
 
   const handleCommand = async (message) => {
-    if(message.includes("hello")||message.includes("hey")){
-        speak("hello sir,what can i help you?")
-    }
-    else if(message.includes("who created you")){
-        speak("i am virtual assistant ,created by Pankaj Develops")
-    }else if(message.includes("open youtube")){
-        speak("opening youtube...")
-        window.open("https://youtube.com/","_blank")
-    }
-    else if(message.includes("open google")){
-        speak("opening google...")
-        window.open("https://google.com/","_blank")
-    }
-    else if(message.includes("open facebook")){
-        speak("opening facebook...")
-        window.open("https://facebook.com/","_blank")
-    }
-    else if(message.includes("open instagram")){
-        speak("opening instagram...")
-        window.open("https://instagram.com/","_blank")
-    }
-    else if(message.includes("open calculator")){
-        speak("opening calculator..")
-        window.open("calculator://")
-    }
-    else if(message.includes("open whatsapp")){
-        speak("opening whatsapp..")
-        window.open("whatsapp://")
-    }
-    else if(message.includes("time")){
-      let time=new Date().toLocaleString(undefined,{hour:"numeric",minute:"numeric"})
-      speak(time)
-    }
-    else if(message.includes("date")){
-        let date=new Date().toLocaleString(undefined,{day:"numeric",month:"short"})
-        speak(date)
-      } 
-    else {
+    if (message.includes("hello") || message.includes("hey")) {
+      speak("hello sir,what can i help you?");
+    } else if (message.includes("who created you")) {
+      speak("i am virtual assistant ,created by Pankaj Develops");
+    } else if (message.includes("open youtube")) {
+      speak("opening youtube...");
+      window.open("https://youtube.com/", "_blank");
+    } else if (message.includes("open google")) {
+      speak("opening google...");
+      window.open("https://google.com/", "_blank");
+    } else if (message.includes("open facebook")) {
+      speak("opening facebook...");
+      window.open("https://facebook.com/", "_blank");
+    } else if (message.includes("open instagram")) {
+      speak("opening instagram...");
+      window.open("https://instagram.com/", "_blank");
+    } else if (message.includes("open calculator")) {
+      speak("opening calculator..");
+      window.open("calculator://");
+    } else if (message.includes("open whatsapp")) {
+      speak("opening whatsapp..");
+      window.open("whatsapp://");
+    } else if (message.includes("time")) {
+      let time = new Date().toLocaleString(undefined, {
+        hour: "numeric",
+        minute: "numeric",
+      });
+      speak(time);
+    } else if (message.includes("date")) {
+      let date = new Date().toLocaleString(undefined, {
+        day: "numeric",
+        month: "short",
+      });
+      speak(date);
+    } else {
       const response = await getGeminiResponse(message);
       const cleanedResponse = cleanText(response);
       speak(cleanedResponse);

@@ -65,5 +65,4 @@ export function wishMe() {
       : "Good Night Sir";
 
   speak(greeting);
-
 }
